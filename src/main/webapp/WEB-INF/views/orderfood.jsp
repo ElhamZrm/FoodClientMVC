@@ -8,47 +8,55 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Please Choose your favorit food!
+	Please order your favorite food!
 	
 	<form:form  modelAttribute="orderFood" class="form-horizontal"  >
 			<fieldset>
 				<legend>Order your food</legend>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="firstName">First Name</label>
+					<label class="control-label col-lg-2" for="name">Name</label>
 					<div class="col-lg-10">
-						<form:input id="firstName" path="firstName" type="text" class="form:input-large"/>
-						<form:errors path="firstName" cssClass="text-danger"/>
+						<form:input id="firstName" path="name" type="text" class="form:input-large"/>
+						<form:errors path="name" cssClass="text-danger"/>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="lastName">Last Name</label>
+					<label class="control-label col-lg-2" for="email">Email</label>
 					<div class="col-lg-10">
-						<form:input id="lastName" path="lastName" type="text" class="form:input-large"/>
-						<form:errors path="lastName" cssClass="text-danger"/>
+						<form:input id="lastName" path="email" type="text" class="form:input-large"/>
+						<form:errors path="email" cssClass="text-danger"/>
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="age">Time</label>
+					<label class="control-label col-lg-2" for="time">Delivery Date</label>
 					<div class="col-lg-10">
 						<form:input id="time" path="time" type="text" class="form:input-large"/>
 						<form:errors path="time" cssClass="text-danger"/>
 					</div>
 				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="location">Location</label>
+					<div class="col-lg-10">
+						<form:input id="location" path="location" type="text" class="form:input-large"/>
+						<form:errors path="location" cssClass="text-danger"/>
+					</div>
+				</div>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2" for="title">Address</label>
+					<label class="control-label col-lg-2" for="address">Address</label>
 					<div class="col-lg-10">
 						<form:input id="address" path="address" type="text" class="form:input-large"/>
 						<form:errors path="address" cssClass="text-danger"/>
 					</div>
 				</div>
-
+				
 				<div class="form-group">
 					<div class="col-lg-offset-2 col-lg-10">
-						<input type="submit" id="btnAdd" class="btn btn-primary" value ="Add"/>
+						<input type="submit" id="btnAdd" class="btn btn-primary" value ="Submit Order"/>
 					</div>
 				</div>
 			</fieldset>
