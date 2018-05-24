@@ -38,6 +38,10 @@
 <%-- 	 			<div class="pull-left"> <h3>${SpecialBlurb}</h3> </div> --%>
 		</div>	
 	</section>
+	<section>
+	<img  style="width:100%" src="<spring:url value="/resource/images/foods.jpg"  htmlEscape="true" />"  />
+	
+	</section>
 	
 </body>
 </html>
