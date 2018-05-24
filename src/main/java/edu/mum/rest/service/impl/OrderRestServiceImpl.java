@@ -17,18 +17,26 @@ public class OrderRestServiceImpl implements OrderRestService{
 	@Autowired
 	RestHttpHeader restHttpHeader;
 	
-	String baseUrl = "http://localhost:8080/FoodDeliveryRestServer/greeting";
+	String baseUrl = "http://localhost:8080/FoodDeliveryRestServer/publishOrder";
 	String baseUrlExtended = baseUrl + "/";
 	
 	@Override
 	public void saveOrder(Order order) {
 		
 		RestTemplate restTemplate = restHttpHeader.getRestTemplate();
-		HttpEntity<Order> httpEntity = new HttpEntity<Order>(order, restHttpHeader.getHttpHeaders());
-		ResponseEntity<Order> response = restTemplate.postForEntity(baseUrl, httpEntity, Order.class);
+//		HttpEntity<Order> httpEntity = new HttpEntity<Order>(order, restHttpHeader.getHttpHeaders());
+//		ResponseEntity<Order> response = restTemplate.postForEntity(baseUrl, httpEntity, Order.class);
 
-//		HttpEntity<Order> httpEntity = new HttpEntity<Order>(restHttpHeader.getHttpHeaders());
-//		ResponseEntity<Order> response = restTemplate.exchange(baseUrl, HttpMethod.GET , httpEntity, Order.class);
+		
+		//GET METHOD
+		HttpEntity<Order> httpEntity = new HttpEntity<Order>(restHttpHeader.getHttpHeaders());
+		ResponseEntity<Order> response = restTemplate.exchange(baseUrl, HttpMethod.GET , httpEntity, Order.class);
+		Order orderRes = response.getBody();
+		System.out.println("BODY IS ::::  " + orderRes.getName() + "" + orderRes.getEmail());
+		
+//		HttpEntity<String> httpEntity = new HttpEntity<String>(restHttpHeader.getHttpHeaders());
+//		restTemplate.exchange( "http://localhost:8080/FoodDeliveryRestServer/greeting", HttpMethod.GET, 
+//				httpEntity, String.class);
 	}
 
 }
