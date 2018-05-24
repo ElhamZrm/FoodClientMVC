@@ -6,8 +6,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-
-import edu.mum.domain.Member;
 import edu.mum.domain.Order;
 import edu.mum.rest.RestHttpHeader;
 import edu.mum.rest.service.OrderRestService;
@@ -28,7 +26,7 @@ public class OrderRestServiceImpl implements OrderRestService{
 		RestTemplate restTemplate = restHttpHeader.getRestTemplate();
 		HttpEntity<Order> httpEntity = new HttpEntity<Order>(order, restHttpHeader.getHttpHeaders());
 		ResponseEntity<Order> response = restTemplate.postForEntity(baseUrl, httpEntity, Order.class);
-	
+
 //		HttpEntity<Order> httpEntity = new HttpEntity<Order>(restHttpHeader.getHttpHeaders());
 //		ResponseEntity<Order> response = restTemplate.exchange(baseUrl, HttpMethod.GET , httpEntity, Order.class);
 	}
