@@ -31,7 +31,7 @@
 		 
 <%--  					    </c:otherwise> --%>
 <%-- 					</c:choose>	 --%>
- 					 <a href="<spring:url value='/orderfood' />" class="btn btn-default"> Submit Your Order
+ 					 <a href="<spring:url value='/orderfood' />" class="btn btn-default" style="background: #4d4df5;margin-top: 20px;"> Submit Your Order
 						<span class="glyphicon-hand-left glyphicon"></span>
 					</a>
 				</div>	

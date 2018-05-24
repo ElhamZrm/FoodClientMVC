@@ -39,17 +39,9 @@ public class RestHttpHeader {
 	*		PLUS JSON Accept header
 	*/
 	public HttpHeaders getHttpHeaders() {
-
-		// KLUDGE to get Credentials...
-//		UserCredentials userCredentials = 
-//				((UserCredentialsServiceImpl)userCredentialsService).getUserCredentials();
-//		
-//		String username = userCredentials.getUsername();
-//		String password = userCredentials.getPassword();
-//		
-//        String auth = username + ":" + password;
-//        byte[] encodedAuth = Base64.encodeBase64( 
-//           auth.getBytes(Charset.forName("US-ASCII")) );
+		
+//        String auth = "user" + ":" + "password";
+//        byte[] encodedAuth = Base64.encodeBase64( auth.getBytes(Charset.forName("US-ASCII")) );
 //        String authHeader = "Basic " + new String( encodedAuth );
 		
 		HttpHeaders requestHeaders = new HttpHeaders();
@@ -57,6 +49,7 @@ public class RestHttpHeader {
 		requestHeaders.setContentType(MediaType.APPLICATION_JSON);
 //		requestHeaders.set("Authorization", authHeader);
 		return requestHeaders;
+		
 	}
 
 	public HttpEntity<?> getHttpEntity() {

@@ -5,14 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
-<title>Insert title here</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<title>Submit Order</title>
 </head>
 <body>
-	Please order your favorite food!
+
 	
 	<form:form  modelAttribute="orderFood" class="form-horizontal"  >
 			<fieldset>
-				<legend>Order your food</legend>
+				<legend style="background: #6bcc54;"><h1>Order your food</h1></legend>
 
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="name">Name</label>

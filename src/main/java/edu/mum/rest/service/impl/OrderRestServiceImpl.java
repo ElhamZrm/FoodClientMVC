@@ -2,6 +2,8 @@ package edu.mum.rest.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,16 +19,18 @@ public class OrderRestServiceImpl implements OrderRestService{
 	@Autowired
 	RestHttpHeader restHttpHeader;
 	
-	String baseUrl = "http://localhost:8080/FoodDeliveryRestServer/publishOrder";
-	String baseUrlExtended = baseUrl + "";
+	String baseUrl = "http://localhost:8080/FoodDeliveryRestServer/greeting";
+	String baseUrlExtended = baseUrl + "/";
 	
 	@Override
 	public void saveOrder(Order order) {
+		
 		RestTemplate restTemplate = restHttpHeader.getRestTemplate();
 		HttpEntity<Order> httpEntity = new HttpEntity<Order>(order, restHttpHeader.getHttpHeaders());
-		order = restTemplate.postForObject(baseUrl, httpEntity, Order.class);
+		ResponseEntity<Order> response = restTemplate.postForEntity(baseUrl, httpEntity, Order.class);
 	
-		
+//		HttpEntity<Order> httpEntity = new HttpEntity<Order>(restHttpHeader.getHttpHeaders());
+//		ResponseEntity<Order> response = restTemplate.exchange(baseUrl, HttpMethod.GET , httpEntity, Order.class);
 	}
 
 }
