@@ -8,13 +8,14 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class OrderAspect {
+public class ClientOrderAspect {
 	@Pointcut("execution(* edu.mum.service..sumbitOrder(..))")
 	public void sumbitOrderMethod() {}
 	
 	@Before("sumbitOrderMethod()")
 	public void doSumbitOrder(JoinPoint joinPoint) {
-		System.out.println("********** ORDER ASPECT--->OrderAspect.doSumbitOrder()  :" + joinPoint.getSignature().getDeclaringTypeName() + "." +
+		System.out.println();
+		System.out.println("********** CLIENT ORDER ASPECT--->ClientOrderAspect.doSumbitOrder()  :" + joinPoint.getSignature().getDeclaringTypeName() + "." +
 				joinPoint.getSignature().getName()+ " **********");
 	}
 }
