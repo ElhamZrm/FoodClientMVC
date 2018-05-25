@@ -16,8 +16,6 @@ import edu.mum.domain.UserCredentials;
 import edu.mum.service.UserCredentialsService;
 import edu.mum.service.impl.UserCredentialsServiceImpl;
 
-
-
 @Component
 public class RestHttpHeader {
 	protected RestTemplate restTemplate;
@@ -40,14 +38,14 @@ public class RestHttpHeader {
 	*/
 	public HttpHeaders getHttpHeaders() {
 		
-//        String auth = "user" + ":" + "password";
-//        byte[] encodedAuth = Base64.encodeBase64( auth.getBytes(Charset.forName("US-ASCII")) );
-//        String authHeader = "Basic " + new String( encodedAuth );
+        String auth = "user" + ":" + "password";
+        byte[] encodedAuth = Base64.encodeBase64( auth.getBytes(Charset.forName("US-ASCII")) );
+        String authHeader = "Basic " + new String( encodedAuth );
 		
 		HttpHeaders requestHeaders = new HttpHeaders();
 		requestHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 		requestHeaders.setContentType(MediaType.APPLICATION_JSON);
-//		requestHeaders.set("Authorization", authHeader);
+		requestHeaders.set("Authorization", authHeader);
 		return requestHeaders;
 		
 	}

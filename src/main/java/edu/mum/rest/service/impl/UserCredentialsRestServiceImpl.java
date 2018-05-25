@@ -9,8 +9,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-
-import edu.mum.domain.Product;
 import edu.mum.domain.UserCredentials;
 import edu.mum.rest.RestHttpHeader;
 import edu.mum.rest.service.UserCredentialsRestService;

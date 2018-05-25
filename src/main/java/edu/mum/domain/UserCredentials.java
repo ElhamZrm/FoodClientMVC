@@ -33,8 +33,8 @@ public class UserCredentials {
 	String verifyPassword;
 	Boolean enabled;
 
-	@OneToOne(mappedBy="userCredentials", cascade = CascadeType.PERSIST) 
- 	private Member member;
+//	@OneToOne(mappedBy="userCredentials", cascade = CascadeType.PERSIST) 
+// 	private Member member;
 	
      @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="credentials_id") 
@@ -70,12 +70,12 @@ public class UserCredentials {
 	public void setAuthority(List<Authority> authority) {
 		this.authority = authority;
 	}
-	public Member getMember() {
-		return member;
-	}
-	public void setMember(Member member) {
-		this.member = member;
-	}
+//	public Member getMember() {
+//		return member;
+//	}
+//	public void setMember(Member member) {
+//		this.member = member;
+//	}
  
  	
 }
